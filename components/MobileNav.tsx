@@ -19,11 +19,12 @@ import { Separator } from "./ui/separator";
 interface Props {
   ownerId: string;
   accountId: string;
+  avatar: string;
   fullName: string;
   email: string;
 }
 
-const MobileNav = ({ ownerId, accountId, fullName, email }: Props) => {
+const MobileNav = ({ ownerId, accountId, avatar, fullName, email }: Props) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -48,7 +49,7 @@ const MobileNav = ({ ownerId, accountId, fullName, email }: Props) => {
         </SheetTrigger>
         <SheetContent className="shad-sheet h-screen px-3 bg-white">
           <SheetTitle>
-            <div className="header-user ">
+            <div className="header-user">
               <Image
                 src={"/assets/images/avataaars.png"}
                 alt="Avatar"
@@ -61,7 +62,7 @@ const MobileNav = ({ ownerId, accountId, fullName, email }: Props) => {
                 <p className="caption">{email}</p>
               </div>
             </div>
-            {/* <Separator className="mb-4 bg-light-200/20" /> */}
+            <Separator className="mb-4 bg-light-200/20" />
           </SheetTitle>
           <nav className="mobile-nav">
             <ul className="mobile-nav-list">
